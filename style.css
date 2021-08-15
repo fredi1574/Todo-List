@@ -12,15 +12,27 @@ h5 {
   text-align: center;
 }
 
-li,
+#newTaskContainer {
+  text-align: center;
+}
+
+#mainContainer,
+button {
+  font-size: 24px;
+}
+
 #inputBox,
 #addButton {
-  font-size: 24px;
-  display: table;
+  font-size: 28px;
+  display: inline-block;
+}
+
+li {
   margin: 0 auto;
-  width: 300px;
-  user-select: none;
+  width: 50%;
   transition: 0.5s;
+  list-style-type: none;
+  user-select: none;
 }
 
 li:nth-child(odd) {
@@ -34,6 +46,38 @@ li:nth-child(even) {
 li:hover {
   transition: 0.3s;
   background-color: gray;
+}
+
+button:not(#addButton) {
+  transition: 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.tickButton {
+  background-color: rgb(74, 196, 74);
+}
+
+.deleteButton {
+  background-color: rgb(223, 64, 64);
+}
+
+.tickButton:hover {
+  transition: 0.3s;
+  color: white;
+}
+
+.tickButton:active {
+  color: rgb(0, 255, 0);
+}
+
+.deleteButton:hover {
+  transition: 0.3s;
+  color: white;
+}
+
+.deleteButton:active {
+  color: rgb(155, 39, 39);
 }
 
 .shake {
@@ -64,4 +108,8 @@ li:hover {
   60% {
     transform: translate3d(4px, 0, 0);
   }
+}
+
+.taskDone {
+  text-decoration: line-through;
 }

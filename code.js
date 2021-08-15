@@ -15,14 +15,30 @@ addButton.addEventListener("click", () => {
   }
 
   let newTask = document.createElement("li");
+  let tickButton = document.createElement("button");
   let deleteButton = document.createElement("button");
+
+  newTask.addEventListener("click", () => {
+    // newTask.innerHTML = "<input type='Text'/>";
+  });
+
+  tickButton.addEventListener("click", () => {
+    newTask.classList.toggle("taskDone");
+  });
+
   deleteButton.addEventListener("click", () => {
     newTask.remove();
   });
 
-  deleteButton.innerHTML = "X";
+  tickButton.innerHTML = "<i class='far fa-check-circle'></i>";
+  tickButton.classList.add("tickButton");
+
+  deleteButton.innerHTML = "<i class='far fa-trash-alt'></i>";
+  deleteButton.classList.add("deleteButton");
+
   newTask.innerHTML = textBox.value;
 
+  newTask.appendChild(tickButton);
   newTask.appendChild(deleteButton);
   container.appendChild(newTask);
 
